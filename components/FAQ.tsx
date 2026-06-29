@@ -4,32 +4,32 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "¿Qué es un préstamo sin buró de crédito?",
-    a: "Es un crédito que no requiere historial crediticio positivo en el Buró de Crédito. Las empresas aprueban basándose en otros factores como tus ingresos o historial en su propia plataforma.",
+    q: "¿Cuánto tiempo tarda en aprobarse un préstamo en línea?",
+    a: "La mayoría de los prestamistas digitales en México aprueban en 5 a 30 minutos. El depósito en tu cuenta puede llegar en menos de 1 hora, aunque en algunos bancos puede tardar hasta 24 horas en días hábiles.",
   },
   {
-    q: "¿Cuánto tarda en aprobarse un préstamo en línea?",
-    a: "Dependiendo del prestamista, la aprobación puede tardar desde 3 minutos hasta 24 horas. La mayoría de las opciones en Dinoro.mx aprueban en menos de 1 hora.",
+    q: "¿Puedo pedir un préstamo si tengo mal buró?",
+    a: "Sí. Muchos prestamistas de nuestro catálogo no consultan el Buró de Crédito. Usa el filtro \"Sin buró\" en la sección de préstamos para ver solo las opciones disponibles para ti, independientemente de tu historial crediticio.",
   },
   {
-    q: "¿Qué documentos necesito para solicitar?",
-    a: "La mayoría de los prestamistas solo requieren tu INE/IFE vigente, una cuenta bancaria o CLABE y tu número de celular. Algunos pueden pedir comprobante de ingresos.",
+    q: "¿Es seguro pedir un préstamo en línea en México?",
+    a: "Sí, siempre que elijas empresas registradas en el SIPRES de CONDUSEF. Todas las opciones de Dinoro.mx operan legalmente en México. Puedes verificar cualquier prestamista en condusef.gob.mx. Nunca compartas tu contraseña bancaria: solo necesitan tu CLABE.",
   },
   {
-    q: "¿Es seguro solicitar un préstamo en línea en México?",
-    a: "Sí, siempre que elijas prestamistas regulados y registrados ante la CNBV o CONDUSEF. Todas las empresas listadas en Dinoro.mx operan legalmente en México.",
+    q: "¿Cuánto me pueden prestar la primera vez?",
+    a: "En tu primer préstamo, la mayoría de las plataformas prestan entre $300 y $8,000 MXN. El límite crece con cada pago puntual que realices. Algunos prestamistas como AvaFin o Creditea ofrecen montos mayores desde el inicio si tienes historial crediticio positivo.",
   },
   {
-    q: "¿Qué significa TAE?",
-    a: "La Tasa Anual Equivalente (TAE) es el costo total del crédito expresado como porcentaje anual, incluyendo intereses y comisiones. Sirve para comparar el costo real entre diferentes préstamos.",
+    q: "¿Qué necesito para pedir un préstamo en línea?",
+    a: "Los requisitos básicos son: INE o IFE vigente, CLABE interbancaria de tu cuenta bancaria, celular con cámara para la selfie de verificación y número de celular activo. No necesitas comprobante de ingresos formal ni aval.",
   },
   {
-    q: "¿Dinoro.mx cobra alguna comisión?",
-    a: "No. Dinoro.mx es un servicio comparativo completamente gratuito para el usuario. Nunca te cobraremos por usar nuestro sitio ni por solicitar un préstamo a través de él.",
+    q: "¿El servicio de Dinoro.mx tiene algún costo?",
+    a: "No. Comparar préstamos en Dinoro.mx es completamente gratuito para el usuario. Nos financiamos a través de comisiones que pagan los prestamistas cuando alguien solicita un crédito desde nuestros enlaces. Esto no afecta los resultados ni encarece tu préstamo.",
   },
   {
-    q: "¿Puedo solicitar un préstamo si estoy en el buró de crédito?",
-    a: "Sí. Muchos de los prestamistas de nuestro catálogo ofrecen préstamos sin consultar el buró de crédito, por lo que tu historial crediticio no es un impedimento.",
+    q: "¿Qué es el CAT y por qué debo revisarlo?",
+    a: "El CAT (Costo Anual Total) es el indicador más completo del costo de un crédito: incluye tasa de interés, comisiones, seguros y otros cargos, todo expresado como porcentaje anual. Siempre compara por CAT y no solo por tasa mensual, ya que dos créditos con la misma tasa pueden tener CATs muy diferentes por sus comisiones.",
   },
 ];
 
