@@ -1,101 +1,114 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import LoanCalculator from "@/components/LoanCalculator";
+import TrustBar from "@/components/TrustBar";
+import LenderGrid from "@/components/LenderGrid";
+import HowItWorks from "@/components/HowItWorks";
+import FAQ from "@/components/FAQ";
+import { lenders } from "@/data/lenders";
+import Link from "next/link";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Préstamos rápidos en línea en México — Compara y solicita hoy",
+  description:
+    "Compara más de 10 prestamistas en México. Préstamos sin buró, solo con INE y 100% en línea. Aprobación en minutos. ¡Encuentra tu préstamo ideal!",
+};
+
+const benefits = [
+  { icon: "⚡", title: "Aprobación rápida", desc: "La mayoría de prestamistas aprueban en menos de 1 hora, algunos en minutos." },
+  { icon: "🔒", title: "100% seguro", desc: "Solo comparamos prestamistas regulados y verificados en México." },
+  { icon: "🆓", title: "Totalmente gratis", desc: "Nuestro servicio de comparación es completamente gratuito para ti." },
+  { icon: "📱", title: "Todo desde tu celular", desc: "Solicita desde tu smartphone sin salir de casa ni hacer filas." },
+];
+
+export default function HomePage() {
+  const topLenders = lenders.slice(0, 6);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-primary via-[#1d8f47] to-[#156032] text-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block bg-accent/20 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                🇲🇽 Solo para México
+              </span>
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                Encuentra el préstamo perfecto para ti
+              </h1>
+              <p className="text-lg text-white/80 mb-8 max-w-lg">
+                Compara más de 10 prestamistas en línea. Sin buró de crédito, solo con INE y aprobación en minutos.
+              </p>
+              <div className="flex flex-wrap gap-4 text-sm text-white/90">
+                <span className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
+                  ✓ Sin buró de crédito
+                </span>
+                <span className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
+                  ✓ Solo con INE
+                </span>
+                <span className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
+                  ✓ 100% en línea
+                </span>
+              </div>
+            </div>
+            <div>
+              <LoanCalculator />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Trust Bar */}
+      <TrustBar />
+
+      {/* Top lenders */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+              Los mejores préstamos de México
+            </h2>
+            <p className="text-gray-500 text-lg">Compara condiciones y encuentra el que más te conviene</p>
+          </div>
+          <LenderGrid lenders={topLenders} />
+          <div className="text-center mt-8">
+            <Link
+              href="/prestamos"
+              className="inline-flex items-center justify-center h-[52px] px-8 bg-primary text-white font-semibold rounded-xl hover:bg-green-700 transition-colors"
+            >
+              Ver todos los préstamos →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <HowItWorks />
+
+      {/* Benefits */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+              ¿Por qué usar Dinoro.mx?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {benefits.map((b, i) => (
+              <div key={i} className="bg-background rounded-2xl p-6 flex gap-4 items-start">
+                <span className="text-3xl">{b.icon}</span>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1">{b.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FAQ />
+    </>
   );
 }
