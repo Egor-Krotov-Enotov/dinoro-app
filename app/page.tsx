@@ -32,10 +32,23 @@ const websiteSchema = {
   },
 };
 
-const stats = [
-  { icon: "👥", value: "120,000+", label: "usuarios" },
-  { icon: "⚡", value: "30%", label: "aprobación" },
-  { icon: "🆓", value: "100%", label: "gratis" },
+const trustBadges = [
+  { icon: "★", label: "4.8 · reseñas de usuarios", sub: "Calificación promedio" },
+  { icon: "🔒", label: "Datos cifrados SSL", sub: "Conexión 100% segura" },
+  { icon: "🛡", label: "Comparación sin compromiso", sub: "Sin registro obligatorio" },
+];
+
+const partnerLogos = [
+  { id: "kueski",      name: "Kueski",      logo: "/logos/kueski.png" },
+  { id: "moneyman",   name: "Moneyman",    logo: "/logos/moneyman.png" },
+  { id: "avafin",     name: "AvaFin",      logo: "/logos/avafin.png" },
+  { id: "tala",       name: "Tala",        logo: "/logos/tala.png" },
+  { id: "baubap",     name: "Baubap",      logo: "/logos/baubap.png" },
+  { id: "credilikeme",name: "Credilikeme", logo: "/logos/credilikeme.svg" },
+  { id: "creditea",   name: "Creditea",    logo: "/logos/creditea.png" },
+  { id: "vivus",      name: "Vivus",       logo: "/logos/vivus.svg" },
+  { id: "credito365", name: "Credito365",  logo: "/logos/credito365.svg" },
+  { id: "cozmo",      name: "Cozmo",       logo: "/logos/cozmo.png" },
 ];
 
 const benefits = [
@@ -47,69 +60,60 @@ const benefits = [
 
 export default function HomePage() {
   const topLenders = lenders.slice(0, 6);
+  const visiblePartners = partnerLogos.slice(0, 6);
+  const hiddenCount = partnerLogos.length - visiblePartners.length;
 
   return (
     <>
       <JsonLd data={websiteSchema} />
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-white pt-10 pb-6 md:pt-16 md:pb-10">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-center">
 
-            {/* Left col — texto */}
-            <div className="lg:pt-2">
-              <span className="inline-block bg-accent/15 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wide uppercase">
-                🇲🇽 Comparador #1 en México
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden bg-white pt-6 pb-4 md:pt-10 md:pb-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-10 items-center">
+
+            {/* Left col */}
+            <div>
+              <span className="inline-block bg-accent/15 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest uppercase">
+                ✱ COMPARAMOS +10 PRESTAMISTAS
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black text-primary leading-tight mb-3">
-                Encuentra el préstamo perfecto para ti
+              <h1 className="text-3xl md:text-4xl font-heading font-black text-primary leading-tight mb-3">
+                Compara y elige,{" "}
+                <span className="text-accent-text">sin compromiso</span>
               </h1>
-              <p className="text-gray-500 text-base md:text-lg mb-6 max-w-md">
-                Compara más de 10 prestamistas. Sin buró, solo con INE y aprobación en minutos.
+              <p className="text-gray-500 text-sm md:text-base mb-4 max-w-md leading-relaxed">
+                Comparamos prestamistas autorizados ante CONDUSEF y te mostramos las mejores condiciones. Tú decides con quién solicitar.
               </p>
 
-              {/* Illustration — mobile: between text and stats */}
-              <div className="flex justify-center mb-5 lg:hidden">
-                <Image
-                  src="/images/hero-illustration.png"
-                  alt="Ilustración de comparación de préstamos en México"
-                  width={280}
-                  height={280}
-                  priority
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Stats row — mobile */}
-              <div className="flex flex-wrap gap-2 mb-6 lg:hidden">
-                {stats.map((s) => (
-                  <span key={s.label} className="flex items-center gap-1.5 bg-gray-50 border border-gray-100 rounded-full px-3 py-1.5 text-sm font-semibold text-gray-800">
-                    <span>{s.icon}</span>
-                    <span className="text-accent-text font-black">{s.value}</span>
-                    <span className="font-normal text-gray-500">{s.label}</span>
+              {/* Pill badges */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {["✓ Sin papeleo", "✓ Sin compromiso", "✓ Respuesta en minutos"].map((pill) => (
+                  <span key={pill} className="text-xs font-semibold text-green-700 bg-green-50 border border-green-100 px-3 py-1 rounded-full">
+                    {pill}
                   </span>
                 ))}
               </div>
 
-              {/* Stats grid — desktop */}
-              <div className="hidden lg:grid grid-cols-3 gap-0 border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm mt-8">
-                {stats.map((s, i) => (
-                  <div key={s.label} className={`flex flex-col items-center py-4 px-3 text-center ${i < 2 ? "border-r border-gray-100" : ""}`}>
-                    <span className="text-xl mb-1">{s.icon}</span>
-                    <span className="text-xl font-black text-primary">{s.value}</span>
-                    <span className="text-xs text-gray-500 mt-0.5">{s.label}</span>
-                  </div>
-                ))}
+              {/* Illustration — mobile */}
+              <div className="flex justify-center my-4 lg:hidden">
+                <Image
+                  src="/images/hero-illustration.png"
+                  alt="Comparación de préstamos en México"
+                  width={220}
+                  height={220}
+                  priority
+                  className="object-contain"
+                />
               </div>
             </div>
 
-            {/* Center col — Illustration desktop only */}
+            {/* Center col — illustration desktop */}
             <div className="hidden lg:flex items-center justify-center">
               <Image
                 src="/images/hero-illustration.png"
-                alt="Ilustración de comparación de préstamos en México"
-                width={380}
-                height={380}
+                alt="Comparación de préstamos en México"
+                width={320}
+                height={320}
                 priority
                 className="object-contain"
               />
@@ -123,14 +127,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Top lenders */}
-      <section className="py-10 md:py-14 bg-[#FAFAFA]">
+      {/* ── Trust row ── */}
+      <section className="bg-white border-t border-gray-100 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {trustBadges.map((b) => (
+              <div key={b.label} className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+                <span className="text-2xl flex-shrink-0">{b.icon}</span>
+                <div>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">{b.label}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{b.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Partners logos ── */}
+      <section className="bg-[#FAFAFA] border-t border-gray-100 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-5">
+            <h2 className="text-base font-bold text-gray-700">Trabajamos con prestamistas autorizados</h2>
+            <p className="text-xs text-gray-400 mt-1">+10 instituciones reguladas comparadas en un solo lugar</p>
+          </div>
+          {/* Mobile: scroll; desktop: grid */}
+          <div className="flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-5 sm:overflow-visible sm:pb-0 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
+            {visiblePartners.map((p) => (
+              <Link
+                key={p.id}
+                href={`/prestamos/${p.id}`}
+                className="flex-shrink-0 flex flex-col items-center gap-2 bg-white border border-gray-100 rounded-xl p-3 hover:shadow-md transition-shadow w-[100px] sm:w-auto"
+              >
+                <div className="w-14 h-10 relative flex items-center justify-center">
+                  <Image
+                    src={p.logo}
+                    alt={`Logo ${p.name}`}
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
+                <span className="text-[11px] font-semibold text-gray-600 text-center leading-tight">{p.name}</span>
+              </Link>
+            ))}
+            {hiddenCount > 0 && (
+              <Link
+                href="/prestamos"
+                className="flex-shrink-0 flex flex-col items-center justify-center gap-1 bg-white border border-dashed border-gray-200 rounded-xl p-3 hover:border-accent hover:text-accent-text transition-colors w-[100px] sm:w-auto"
+              >
+                <span className="text-xl font-black text-gray-300">+{hiddenCount}</span>
+                <span className="text-[11px] font-semibold text-gray-400">más</span>
+              </Link>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Top lenders ── */}
+      <section className="py-10 md:py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-black text-primary mb-2">
               Los mejores préstamos de México
             </h2>
-            <p className="text-gray-500 text-base">Compara condiciones y encuentra el que más te conviene</p>
+            <p className="text-gray-500 text-base">Compara condiciones y elige el que más te conviene</p>
           </div>
           <LenderGrid lenders={topLenders} />
           <div className="text-center mt-8">
@@ -144,10 +205,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* ── How it works ── */}
       <HowItWorks />
 
-      {/* Benefits */}
+      {/* ── Benefits ── */}
       <section className="py-10 md:py-14 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
@@ -169,7 +230,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── FAQ ── */}
       <FAQ />
     </>
   );

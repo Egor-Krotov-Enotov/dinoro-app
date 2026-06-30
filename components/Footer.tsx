@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,9 +7,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-1 mb-3">
-              <span className="text-xl font-extrabold text-white">Dinoro</span>
-              <span className="text-xl font-extrabold text-accent">.mx</span>
+            <div className="mb-3">
+              <Image
+                src="/logos/dinoro-logo.svg"
+                alt="Dinoro.mx — Comparador de préstamos en México"
+                width={110}
+                height={27}
+                unoptimized
+                className="brightness-0 invert"
+              />
             </div>
             <p className="text-sm leading-relaxed">
               Comparador de microcréditos y préstamos personales en México. Encuentra la mejor opción para ti.

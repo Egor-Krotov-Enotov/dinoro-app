@@ -123,6 +123,22 @@ export default function LoanCalculator() {
         </div>
       </div>
 
+      {/* Micro-stats */}
+      <div className="grid grid-cols-3 divide-x divide-gray-100 border border-gray-100 rounded-xl mb-4 text-center">
+        <div className="py-2.5 px-2">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Plazo</p>
+          <p className="text-sm font-black text-primary mt-0.5">{dias} días</p>
+        </div>
+        <div className="py-2.5 px-2">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Sin Buró</p>
+          <p className="text-sm font-black text-green-700 mt-0.5">opciones ✓</p>
+        </div>
+        <div className="py-2.5 px-2">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Respuesta</p>
+          <p className="text-sm font-black text-primary mt-0.5">minutos</p>
+        </div>
+      </div>
+
       <Link
         href={ctaHref}
         className="flex items-center justify-center w-full h-[52px] bg-accent text-primary font-bold text-base rounded-xl hover:bg-accent-hover transition-colors"
@@ -131,20 +147,8 @@ export default function LoanCalculator() {
         Ver préstamos disponibles →
       </Link>
 
-      <div className="flex justify-center gap-4 mt-3 text-xs text-gray-500 flex-wrap">
-        <span className="flex items-center gap-1">
-          <span className="text-green-700">✓</span> Sin buró
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="text-green-700">✓</span> Solo con INE
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="text-green-700">✓</span> 100% en línea
-        </span>
-      </div>
-
-      <p className="text-center text-xs text-gray-500 mt-2">
-        * Cálculo orientativo. La tasa real depende del prestamista elegido.
+      <p className="text-center mt-3" style={{ fontSize: "9px", lineHeight: "1.4", color: "#9CA3AF" }}>
+        Tasas y condiciones finales dependen del prestamista elegido y tu perfil. Consulta el CAT antes de firmar.
       </p>
     </div>
   );
