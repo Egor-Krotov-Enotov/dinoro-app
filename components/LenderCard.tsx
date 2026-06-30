@@ -27,6 +27,10 @@ function formatAmount(n: number) {
   return new Intl.NumberFormat("es-MX").format(n);
 }
 
+function formatCurrency(n: number) {
+  return new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(n);
+}
+
 function LenderLogo({ logo, name }: { logo: string; name: string }) {
   const [error, setError] = useState(false);
 
@@ -85,8 +89,8 @@ export default function LenderCard({ lender }: { lender: Lender }) {
           <p className="font-bold text-gray-900">{lender.minDays}–{lender.maxDays}</p>
         </div>
         <div>
-          <span className="text-xs text-gray-400 uppercase tracking-wide">TAE desde</span>
-          <p className="font-bold text-gray-900">{lender.taeFrom}%</p>
+          <span className="text-xs text-gray-400 uppercase tracking-wide">Interés en 30 días</span>
+          <p className="font-bold text-gray-900">desde {formatCurrency(750)} <span className="text-xs font-normal text-gray-400">/ $5k</span></p>
         </div>
         <div>
           <span className="text-xs text-gray-400 uppercase tracking-wide">Aprobación</span>
@@ -102,7 +106,7 @@ export default function LenderCard({ lender }: { lender: Lender }) {
           </span>
         )}
         {lender.online && (
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-gray-600 bg-gray-100 px-2.5 py-1 rounded-full">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-800 px-2.5 py-1 rounded-full" style={{ backgroundColor: "#FFF4E0" }}>
             <span>📱</span> 100% en línea
           </span>
         )}

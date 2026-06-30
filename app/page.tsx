@@ -89,16 +89,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Stats bar — mobile (below calculator) */}
-          <div className="lg:hidden mt-6 grid grid-cols-3 gap-0 border border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm">
-            {stats.map((s, i) => (
-              <div key={s.label} className={`flex flex-col items-center py-3 px-2 text-center ${i < 2 ? "border-r border-gray-100" : ""}`}>
-                <span className="text-lg mb-0.5">{s.icon}</span>
-                <span className="text-base font-black text-primary">{s.value}</span>
-                <span className="text-xs text-gray-500">{s.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

@@ -15,12 +15,13 @@ export default function StickyMobileCTA() {
   if (!visible) return null;
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t border-gray-100 shadow-lg">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-3 py-2.5 bg-white border-t border-gray-100 shadow-lg">
       <Link
         href="/prestamos"
-        className="flex items-center justify-center w-full h-[52px] bg-accent text-primary font-bold text-base rounded-xl hover:bg-accent-hover transition-colors"
+        className="flex items-center justify-center w-full h-[48px] bg-accent text-primary font-bold text-sm sm:text-base rounded-xl hover:bg-accent-hover transition-colors px-4 whitespace-nowrap overflow-hidden"
+        style={{ minWidth: 0 }}
       >
-        Solicitar ahora — Sin buró ✓
+        <span className="truncate">Solicitar ahora — Sin buró ✓</span>
       </Link>
     </div>
   );
