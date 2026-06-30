@@ -119,6 +119,16 @@ export default function LenderCard({ lender }: { lender: Lender }) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           className="flex-1 flex items-center justify-center h-[48px] bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-sm"
+          onClick={() => {
+            type GtagFn = (cmd: string, event: string, params: Record<string, unknown>) => void;
+            const w = window as unknown as { gtag?: GtagFn };
+            if (typeof window !== "undefined" && w.gtag) {
+              w.gtag("event", "click_solicitar", {
+                lender_id: lender.id,
+                lender_name: lender.name,
+              });
+            }
+          }}
         >
           Solicitar
         </a>

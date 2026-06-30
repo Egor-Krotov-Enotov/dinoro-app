@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import JsonLd from "@/components/JsonLd";
 
 const faqs = [
   {
@@ -33,29 +34,48 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-12 md:py-16 bg-white">
+      <JsonLd data={faqSchema} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-black text-primary mb-2">
             Preguntas frecuentes
           </h2>
-          <p className="text-gray-500">Todo lo que necesitas saber antes de solicitar tu préstamo</p>
+          <p className="text-gray-500 text-sm">Todo lo que necesitas saber antes de solicitar tu préstamo</p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <div
+              key={idx}
+              className="bg-white rounded-2xl overflow-hidden"
+              style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}
+            >
               <button
-                className="w-full text-left px-6 py-4 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
                 onClick={() => setOpen(open === idx ? null : idx)}
+                aria-expanded={open === idx}
               >
                 <span className="font-semibold text-gray-900 text-sm md:text-base">{faq.q}</span>
                 <svg
-                  className={`w-5 h-5 text-primary flex-shrink-0 transition-transform ${open === idx ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${open === idx ? "rotate-180" : ""}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -64,7 +84,7 @@ export default function FAQ() {
                 </svg>
               </button>
               {open === idx && (
-                <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed border-t border-gray-100">
                   <p className="pt-3">{faq.a}</p>
                 </div>
               )}

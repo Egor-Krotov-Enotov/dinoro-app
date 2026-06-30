@@ -3,6 +3,7 @@ import LoanCalculator from "@/components/LoanCalculator";
 import LenderGrid from "@/components/LenderGrid";
 import HowItWorks from "@/components/HowItWorks";
 import FAQ from "@/components/FAQ";
+import JsonLd from "@/components/JsonLd";
 import { lenders } from "@/data/lenders";
 import Link from "next/link";
 
@@ -10,6 +11,24 @@ export const metadata: Metadata = {
   title: "Préstamos rápidos en línea en México — Compara y solicita hoy",
   description:
     "Compara más de 10 prestamistas en México. Préstamos sin buró, solo con INE y 100% en línea. Aprobación en minutos. ¡Encuentra tu préstamo ideal!",
+  openGraph: {
+    title: "Dinoro.mx — Préstamos rápidos en línea en México",
+    description: "Compara más de 10 prestamistas. Sin buró, solo con INE. Aprobación en minutos.",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Dinoro.mx",
+  url: "https://dinoro.mx",
+  description: "Comparador de préstamos personales y microcréditos en México",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: { "@type": "EntryPoint", urlTemplate: "https://dinoro.mx/prestamos?q={search_term_string}" },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const stats = [
@@ -30,6 +49,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={websiteSchema} />
       {/* Hero — fondo blanco con blob decorativo */}
       <section className="relative overflow-hidden bg-white pt-10 pb-6 md:pt-16 md:pb-10">
         {/* Blob decorativo fondo */}

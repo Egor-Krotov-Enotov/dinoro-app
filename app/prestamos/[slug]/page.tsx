@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { lenders } from "@/data/lenders";
 import { lenderDetails } from "@/data/lender-details";
+import JsonLd from "@/components/JsonLd";
 
 interface Props {
   params: { slug: string };
@@ -62,8 +63,32 @@ export default function LenderPage({ params }: Props) {
     { label: "Calificación", value: `${lender.rating} / 5` },
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://dinoro.mx" },
+      { "@type": "ListItem", position: 2, name: "Préstamos", item: "https://dinoro.mx/prestamos" },
+      { "@type": "ListItem", position: 3, name: lender!.name, item: `https://dinoro.mx/prestamos/${lender!.id}` },
+    ],
+  };
+
+  const financialProductSchema = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    name: `Préstamo ${lender!.name}`,
+    description: detail!.description,
+    provider: { "@type": "Organization", name: lender!.name },
+    url: lender!.url,
+    amount: { "@type": "MonetaryAmount", currency: "MXN", maxValue: lender!.maxAmount, minValue: detail!.minAmount },
+    annualPercentageRate: lender!.taeFrom,
+    feesAndCommissionsSpecification: `TAE desde ${lender!.taeFrom}%`,
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={financialProductSchema} />
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6 flex-wrap">
         <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>

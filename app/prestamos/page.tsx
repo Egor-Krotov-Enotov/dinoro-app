@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Todos los préstamos en línea en México",
   description:
     "Catálogo completo de préstamos en línea en México. Compara montos, plazos y tasas. Aprobación sin buró de crédito.",
+  alternates: {
+    canonical: "https://dinoro.mx/prestamos",
+  },
 };
 
 const categories = [
@@ -37,6 +40,7 @@ export default function PrestamosPage({ searchParams }: Props) {
       </div>
 
       {/* Category nav */}
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2 px-1">Tipo de préstamo:</p>
       <div className="flex gap-2 overflow-x-auto pb-1 mb-6 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
         {categories.map((c) => (
           <Link

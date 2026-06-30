@@ -1,7 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
+
+type GtagFn = (cmd: string, event: string, params: Record<string, unknown>) => void;
+
+function trackGA(event: string, params: Record<string, unknown>) {
+  const w = window as unknown as { gtag?: GtagFn };
+  if (typeof window !== "undefined" && w.gtag) {
+    w.gtag("event", event, params);
+  }
+}
 
 const TERM_OPTIONS = [7, 14, 30, 60, 90];
 
@@ -25,6 +34,7 @@ function formatCurrency(n: number) {
 export default function LoanCalculator() {
   const [monto, setMonto] = useState(5000);
   const [dias, setDias] = useState(30);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const tasa = DAILY_RATE[dias] ?? 0.005;
   const interesMin = Math.round(monto * tasa * dias);
@@ -32,6 +42,13 @@ export default function LoanCalculator() {
   const totalMin = monto + interesMin;
 
   const ctaHref = `/prestamos?monto=${monto}&dias=${dias}`;
+
+  const handleChange = useCallback((newMonto: number, newDias: number) => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      trackGA("calculator_used", { monto: newMonto, dias: newDias });
+    }, 800);
+  }, []);
 
   return (
     <div
@@ -57,7 +74,7 @@ export default function LoanCalculator() {
           max={20000}
           step={500}
           value={monto}
-          onChange={(e) => setMonto(Number(e.target.value))}
+          onChange={(e) => { const v = Number(e.target.value); setMonto(v); handleChange(v, dias); }}
           className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-accent"
         />
         <div className="flex justify-between text-xs text-gray-400 mt-1">
@@ -73,7 +90,7 @@ export default function LoanCalculator() {
           {TERM_OPTIONS.map((d) => (
             <button
               key={d}
-              onClick={() => setDias(d)}
+              onClick={() => { setDias(d); handleChange(monto, d); }}
               className={`flex-1 min-w-[48px] h-[40px] rounded-lg text-xs font-bold transition-colors ${
                 dias === d
                   ? "bg-accent text-primary shadow-sm"
@@ -109,6 +126,7 @@ export default function LoanCalculator() {
       <Link
         href={ctaHref}
         className="flex items-center justify-center w-full h-[52px] bg-accent text-primary font-bold text-base rounded-xl hover:bg-accent-hover transition-colors"
+        onClick={() => trackGA("calculator_to_catalog", { monto, dias })}
       >
         Ver préstamos disponibles →
       </Link>

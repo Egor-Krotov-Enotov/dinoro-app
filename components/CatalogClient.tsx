@@ -106,7 +106,9 @@ export default function CatalogClient({ monto, dias }: Props) {
       )}
 
       {/* Filter chips */}
-      <div className="flex gap-2 overflow-x-auto pb-2 mb-6 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
+      <div className="mb-6">
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2 px-1">Ordenar por:</p>
+        <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
         {CHIPS.map((chip) => (
           <button
             key={chip.id}
@@ -120,6 +122,7 @@ export default function CatalogClient({ monto, dias }: Props) {
             {chip.label}
           </button>
         ))}
+        </div>
       </div>
 
       {/* Count */}
