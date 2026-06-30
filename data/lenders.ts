@@ -18,7 +18,7 @@ export const lenders: Lender[] = [
   {
     id: "kueski",
     name: "Kueski",
-    logo: "/logos/kueski.svg",
+    logo: "/logos/kueski.png",
     maxAmount: 26000,
     minDays: 7,
     maxDays: "99 días",
@@ -33,7 +33,7 @@ export const lenders: Lender[] = [
   {
     id: "moneyman",
     name: "Moneyman",
-    logo: "/logos/moneyman.svg",
+    logo: "/logos/moneyman.png",
     maxAmount: 25000,
     minDays: 7,
     maxDays: "30 días",
@@ -48,7 +48,7 @@ export const lenders: Lender[] = [
   {
     id: "avafin",
     name: "AvaFin",
-    logo: "/logos/avafin.svg",
+    logo: "/logos/avafin.png",
     maxAmount: 80000,
     minDays: 7,
     maxDays: "30 días",
@@ -63,7 +63,7 @@ export const lenders: Lender[] = [
   {
     id: "tala",
     name: "Tala",
-    logo: "/logos/tala.svg",
+    logo: "/logos/tala.png",
     maxAmount: 22000,
     minDays: 15,
     maxDays: "120 días",
@@ -78,7 +78,7 @@ export const lenders: Lender[] = [
   {
     id: "baubap",
     name: "Baubap",
-    logo: "/logos/baubap.svg",
+    logo: "/logos/baubap.png",
     maxAmount: 10000,
     minDays: 7,
     maxDays: "28 días",
@@ -108,7 +108,7 @@ export const lenders: Lender[] = [
   {
     id: "creditea",
     name: "Creditea",
-    logo: "/logos/creditea.svg",
+    logo: "/logos/creditea.png",
     maxAmount: 70000,
     minDays: 30,
     maxDays: "36 meses",
@@ -123,7 +123,7 @@ export const lenders: Lender[] = [
   {
     id: "cozmo",
     name: "Cozmo",
-    logo: "/logos/cozmo.svg",
+    logo: "/logos/cozmo.png",
     maxAmount: 30000,
     minDays: 61,
     maxDays: "91 días",

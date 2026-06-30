@@ -46,7 +46,7 @@ function LenderLogo({ logo, name }: { logo: string; name: string }) {
     <div className="w-20 h-10 relative bg-gray-50 rounded-lg overflow-hidden flex-shrink-0">
       <Image
         src={logo}
-        alt={`Logo ${name}`}
+        alt={`Logo de ${name} — préstamos en línea México`}
         fill
         className="object-contain p-1"
         onError={() => setError(true)}

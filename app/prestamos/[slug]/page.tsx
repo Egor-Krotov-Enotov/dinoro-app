@@ -106,7 +106,7 @@ export default function LenderPage({ params }: Props) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={lender.logo}
-                alt={`Logo ${lender.name}`}
+                alt={`Logo de ${lender.name} — préstamos en línea México`}
                 className="max-h-12 max-w-[72px] object-contain p-1"
               />
             </div>
