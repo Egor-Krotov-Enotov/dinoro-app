@@ -60,7 +60,7 @@ const mdxComponents = {
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
-      className="border-l-4 border-primary pl-4 italic text-gray-600 my-4 bg-primary/5 py-2 pr-3 rounded-r-lg"
+      className="border-l-4 border-primary pl-4 italic text-gray-600 my-4 bg-gray-50 py-2 pr-3 rounded-r-lg"
       {...props}
     />
   ),
@@ -118,7 +118,7 @@ export default function BlogPostPage({ params }: Props) {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-primary/10 text-primary font-medium px-2 py-0.5 rounded-full"
+                className="text-xs bg-accent/10 text-accent font-medium px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>

@@ -44,7 +44,7 @@ export default function BlogPage() {
                   {post.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs bg-primary/10 text-primary font-medium px-2 py-0.5 rounded-full"
+                      className="text-xs bg-accent/10 text-accent font-medium px-2 py-0.5 rounded-full"
                     >
                       {tag}
                     </span>

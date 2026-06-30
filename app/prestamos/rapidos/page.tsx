@@ -53,7 +53,7 @@ export default function RapidosPage() {
 
       {/* Hero */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-3">
           ⚡ {filtered.length} opciones disponibles
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
@@ -109,14 +109,14 @@ export default function RapidosPage() {
               "En algunos casos: selfie o foto con tu INE",
             ].map((req) => (
               <li key={req} className="flex items-start gap-2">
-                <span className="text-primary font-bold mt-0.5">✓</span>
+                <span className="text-success font-bold mt-0.5">✓</span>
                 <span>{req}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="bg-primary/5 rounded-2xl p-6">
+        <div className="bg-accent/5 rounded-2xl p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-4">Lo que NO necesitas</h2>
           <ul className="space-y-3 text-sm text-gray-700">
             {[
@@ -147,7 +147,7 @@ export default function RapidosPage() {
             { step: "4", title: "Recibe el dinero", desc: "El depósito llega directo a tu cuenta bancaria." },
           ].map((s) => (
             <div key={s.step} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 text-center">
-              <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">
+              <div className="w-10 h-10 bg-accent text-primary rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">
                 {s.step}
               </div>
               <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>

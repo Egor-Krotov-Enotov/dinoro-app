@@ -91,7 +91,7 @@ export default function LenderPage({ params }: Props) {
                   {lender.name}
                 </h1>
                 {detail.recommended && (
-                  <span className="inline-flex items-center gap-1 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="inline-flex items-center gap-1 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full">
                     ⭐ Nuestra recomendación
                   </span>
                 )}
@@ -103,7 +103,7 @@ export default function LenderPage({ params }: Props) {
             href={lender.url}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="sm:flex-shrink-0 flex items-center justify-center h-[52px] px-6 bg-accent text-white font-bold rounded-xl hover:bg-amber-500 transition-colors text-sm whitespace-nowrap"
+            className="sm:flex-shrink-0 flex items-center justify-center h-[52px] px-6 bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-sm whitespace-nowrap"
           >
             Solicitar en {lender.name} →
           </a>
@@ -123,7 +123,7 @@ export default function LenderPage({ params }: Props) {
               {conditions.map((row, i) => (
                 <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="px-4 py-3 font-medium text-gray-500 w-1/2">{row.label}</td>
-                  <td className={`px-4 py-3 font-semibold ${row.value.startsWith("✓") ? "text-primary" : "text-gray-900"}`}>
+                  <td className={`px-4 py-3 font-semibold ${row.value.startsWith("✓") ? "text-success" : "text-gray-900"}`}>
                     {row.value}
                   </td>
                 </tr>
@@ -145,13 +145,13 @@ export default function LenderPage({ params }: Props) {
       <section className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="bg-green-50 rounded-2xl p-6">
           <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs">✓</span>
+            <span className="w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-xs">✓</span>
             Ventajas
           </h3>
           <ul className="space-y-2">
             {detail.pros.map((pro, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                <span className="text-primary font-bold mt-0.5 flex-shrink-0">✓</span>
+                <span className="text-success font-bold mt-0.5 flex-shrink-0">✓</span>
                 <span>{pro}</span>
               </li>
             ))}
@@ -175,7 +175,7 @@ export default function LenderPage({ params }: Props) {
       </section>
 
       {/* Ideal for */}
-      <section className="mb-8 bg-primary/5 rounded-2xl p-6 border border-primary/20">
+      <section className="mb-8 bg-accent/5 rounded-2xl p-6 border border-accent/20">
         <h2 className="text-xl font-extrabold text-gray-900 mb-3 flex items-center gap-2">
           <span className="text-2xl">🎯</span>
           ¿Para quién es ideal {lender.name}?
@@ -196,13 +196,13 @@ export default function LenderPage({ params }: Props) {
           href={lender.url}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          className="flex-1 flex items-center justify-center h-[52px] bg-accent text-white font-bold rounded-xl hover:bg-amber-500 transition-colors text-base"
+          className="flex-1 flex items-center justify-center h-[52px] bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-base"
         >
           Solicitar en {lender.name} →
         </a>
         <Link
           href="/prestamos"
-          className="flex-1 flex items-center justify-center h-[52px] border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-colors text-base"
+          className="flex-1 flex items-center justify-center h-[52px] border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:border-primary hover:text-primary transition-colors text-base"
         >
           Ver todas las opciones
         </Link>

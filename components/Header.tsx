@@ -10,12 +10,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-extrabold text-primary">Dinoro</span>
-            <span className="text-2xl font-extrabold text-accent">.mx</span>
+          <Link href="/" className="flex items-center gap-0.5">
+            <span className="text-2xl font-heading font-black text-primary tracking-tight">dinoro</span>
+            <span className="text-2xl font-heading font-black text-accent tracking-tight">.mx</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
             <Link href="/prestamos" className="hover:text-primary transition-colors">Préstamos</Link>
             <Link href="/prestamos/rapidos" className="hover:text-primary transition-colors">Préstamos rápidos</Link>
             <Link href="/prestamos/sin-buro" className="hover:text-primary transition-colors">Sin buró</Link>
@@ -25,7 +25,7 @@ export default function Header() {
 
           <Link
             href="/prestamos"
-            className="hidden md:inline-flex items-center justify-center bg-accent text-white font-semibold text-sm px-5 h-[44px] rounded-lg hover:bg-amber-500 transition-colors"
+            className="hidden md:inline-flex items-center justify-center bg-accent text-primary font-bold text-sm px-5 h-[44px] rounded-lg hover:bg-accent-hover transition-colors"
           >
             Solicitar préstamo
           </Link>
@@ -46,7 +46,7 @@ export default function Header() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden py-3 border-t border-gray-100 flex flex-col gap-3 text-sm font-medium text-gray-700">
+          <div className="md:hidden py-3 border-t border-gray-100 flex flex-col gap-3 text-sm font-medium text-gray-600">
             <Link href="/prestamos" className="py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Préstamos</Link>
             <Link href="/prestamos/rapidos" className="py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Préstamos rápidos</Link>
             <Link href="/prestamos/sin-buro" className="py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Sin buró</Link>
@@ -54,7 +54,7 @@ export default function Header() {
             <Link href="/blog" className="py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Blog</Link>
             <Link
               href="/prestamos"
-              className="inline-flex items-center justify-center bg-accent text-white font-semibold py-3 rounded-lg mt-1"
+              className="inline-flex items-center justify-center bg-accent text-primary font-bold py-3 rounded-lg mt-1"
               onClick={() => setMobileOpen(false)}
             >
               Solicitar préstamo

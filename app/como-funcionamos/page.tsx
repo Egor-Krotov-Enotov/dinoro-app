@@ -172,7 +172,7 @@ export default function ComoFuncionamosPage() {
                 "Actualizamos los datos de TAE, montos y plazos periódicamente para mantener la precisión.",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <span className="text-primary font-bold mt-0.5">✓</span>
+                  <span className="text-success font-bold mt-0.5">✓</span>
                   <span>{item}</span>
                 </li>
               ))}

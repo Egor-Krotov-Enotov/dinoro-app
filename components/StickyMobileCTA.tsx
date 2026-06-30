@@ -18,7 +18,7 @@ export default function StickyMobileCTA() {
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t border-gray-100 shadow-lg">
       <Link
         href="/prestamos"
-        className="flex items-center justify-center w-full h-[52px] bg-accent text-white font-bold text-base rounded-xl hover:bg-amber-500 transition-colors"
+        className="flex items-center justify-center w-full h-[52px] bg-accent text-primary font-bold text-base rounded-xl hover:bg-accent-hover transition-colors"
       >
         Solicitar ahora — Sin buró ✓
       </Link>

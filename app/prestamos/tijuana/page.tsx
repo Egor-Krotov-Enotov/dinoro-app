@@ -40,7 +40,7 @@ export default function TijuanaPage() {
 
       {/* Hero */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-3">
           🌉 Tijuana, Baja California
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
@@ -126,7 +126,7 @@ export default function TijuanaPage() {
         <p className="text-gray-500 mb-4">Compara todas las opciones sin buró disponibles para Tijuana</p>
         <Link
           href="/prestamos"
-          className="inline-flex items-center justify-center h-[52px] px-8 bg-primary text-white font-bold rounded-xl hover:bg-green-700 transition-colors text-base"
+          className="inline-flex items-center justify-center h-[52px] px-8 bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-base"
         >
           Ver todos los préstamos disponibles →
         </Link>

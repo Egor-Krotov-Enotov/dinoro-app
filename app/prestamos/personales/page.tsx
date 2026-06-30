@@ -86,7 +86,7 @@ export default function PersonalesPage() {
 
       {/* Hero */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-3">
           💼 Hasta $80,000 MXN
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
@@ -142,7 +142,7 @@ export default function PersonalesPage() {
                   <td className="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">{row.factor}</td>
                   <td className="px-4 py-3 text-gray-600 leading-relaxed">{row.detail}</td>
                   <td className="px-4 py-3">
-                    <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap">
+                    <span className="inline-block bg-accent/10 text-accent text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap">
                       {row.tip}
                     </span>
                   </td>
@@ -154,7 +154,7 @@ export default function PersonalesPage() {
       </section>
 
       {/* Tips */}
-      <section className="mt-12 bg-primary/5 rounded-2xl p-8">
+      <section className="mt-12 bg-accent/5 rounded-2xl p-8">
         <h2 className="text-xl font-extrabold text-gray-900 mb-5">
           ¿Cómo mejorar tus probabilidades de aprobación?
         </h2>

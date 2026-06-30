@@ -32,8 +32,8 @@ function LenderLogo({ logo, name }: { logo: string; name: string }) {
 
   if (error) {
     return (
-      <div className="w-24 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-        <span className="text-xs font-bold text-primary text-center leading-tight px-1">{name}</span>
+      <div className="w-24 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+        <span className="text-xs font-bold text-gray-700 text-center leading-tight px-1">{name}</span>
       </div>
     );
   }
@@ -84,12 +84,12 @@ export default function LenderCard({ lender }: { lender: Lender }) {
       <div className="flex gap-3 text-xs text-gray-600">
         {lender.sinBuro && (
           <span className="flex items-center gap-1">
-            <span className="text-primary font-bold">✓</span> Sin buró
+            <span className="text-success font-bold">✓</span> Sin buró
           </span>
         )}
         {lender.online && (
           <span className="flex items-center gap-1">
-            <span className="text-primary font-bold">✓</span> 100% en línea
+            <span className="text-success font-bold">✓</span> 100% en línea
           </span>
         )}
       </div>
@@ -99,13 +99,13 @@ export default function LenderCard({ lender }: { lender: Lender }) {
           href={lender.url}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          className="flex-1 flex items-center justify-center h-[52px] bg-accent text-white font-semibold rounded-xl hover:bg-amber-500 transition-colors text-sm"
+          className="flex-1 flex items-center justify-center h-[52px] bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-sm"
         >
           Solicitar
         </a>
         <Link
-          href={`/prestamos#${lender.id}`}
-          className="flex-1 flex items-center justify-center h-[52px] border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-colors text-sm"
+          href={`/prestamos/${lender.id}`}
+          className="flex-1 flex items-center justify-center h-[52px] border-2 border-gray-200 text-gray-700 font-semibold rounded-xl hover:border-primary hover:text-primary transition-colors text-sm"
         >
           Ver más
         </Link>

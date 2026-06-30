@@ -25,31 +25,37 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary via-[#1d8f47] to-[#156032] text-white py-16 md:py-24">
+      {/* Hero — fondo negro */}
+      <section className="bg-primary text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block bg-accent/20 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-4">
                 🇲🇽 Solo para México
               </span>
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              <h1 className="text-4xl md:text-5xl font-heading font-black leading-tight mb-4">
                 Encuentra el préstamo perfecto para ti
               </h1>
-              <p className="text-lg text-white/80 mb-8 max-w-lg">
+              <p className="text-lg text-white/70 mb-8 max-w-lg">
                 Compara más de 10 prestamistas en línea. Sin buró de crédito, solo con INE y aprobación en minutos.
               </p>
-              <div className="flex flex-wrap gap-4 text-sm text-white/90">
+              <div className="flex flex-wrap gap-3 text-sm text-white/90 mb-8">
                 <span className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                  ✓ Sin buró de crédito
+                  <span className="text-success font-bold">✓</span> Sin buró de crédito
                 </span>
                 <span className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                  ✓ Solo con INE
+                  <span className="text-success font-bold">✓</span> Solo con INE
                 </span>
                 <span className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                  ✓ 100% en línea
+                  <span className="text-success font-bold">✓</span> 100% en línea
                 </span>
               </div>
+              <Link
+                href="/prestamos"
+                className="inline-flex items-center justify-center h-[52px] px-8 bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-base"
+              >
+                Ver todos los préstamos →
+              </Link>
             </div>
             <div>
               <LoanCalculator />
@@ -62,10 +68,10 @@ export default function HomePage() {
       <TrustBar />
 
       {/* Top lenders */}
-      <section className="py-16">
+      <section className="py-16 bg-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-primary mb-3">
               Los mejores préstamos de México
             </h2>
             <p className="text-gray-500 text-lg">Compara condiciones y encuentra el que más te conviene</p>
@@ -74,7 +80,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/prestamos"
-              className="inline-flex items-center justify-center h-[52px] px-8 bg-primary text-white font-semibold rounded-xl hover:bg-green-700 transition-colors"
+              className="inline-flex items-center justify-center h-[52px] px-8 bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors"
             >
               Ver todos los préstamos →
             </Link>
@@ -89,13 +95,13 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-heading font-black text-primary mb-3">
               ¿Por qué usar Dinoro.mx?
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {benefits.map((b, i) => (
-              <div key={i} className="bg-background rounded-2xl p-6 flex gap-4 items-start">
+              <div key={i} className="bg-background-secondary rounded-2xl p-6 flex gap-4 items-start">
                 <span className="text-3xl">{b.icon}</span>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">{b.title}</h3>

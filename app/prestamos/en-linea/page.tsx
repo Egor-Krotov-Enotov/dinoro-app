@@ -77,7 +77,7 @@ export default function EnLineaPage() {
 
       {/* Hero */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-3">
           💻 {filtered.length} prestamistas 100% digitales
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
@@ -102,7 +102,7 @@ export default function EnLineaPage() {
           <div className="space-y-6">
             {processSteps.map((s, i) => (
               <div key={i} className="relative flex items-start gap-5">
-                <div className="w-16 h-16 bg-white border-2 border-primary rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 z-10 shadow-sm">
+                <div className="w-16 h-16 bg-white border-2 border-accent rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 z-10 shadow-sm">
                   {s.icon}
                 </div>
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex-1">

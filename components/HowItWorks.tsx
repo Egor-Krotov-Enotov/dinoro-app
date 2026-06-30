@@ -24,7 +24,7 @@ export default function HowItWorks() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-heading font-black text-primary mb-3">
             ¿Cómo funciona Dinoro.mx?
           </h2>
           <p className="text-gray-500 text-lg">En 3 simples pasos encuentras tu préstamo ideal</p>
@@ -36,14 +36,14 @@ export default function HowItWorks() {
           {steps.map((step, idx) => (
             <div key={idx} className="text-center flex flex-col items-center gap-4">
               <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-4xl">
+                <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center text-4xl">
                   {step.icon}
                 </div>
-                <span className="absolute -top-1 -right-1 w-7 h-7 bg-primary text-white text-sm font-bold rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-7 h-7 bg-accent text-primary text-sm font-bold rounded-full flex items-center justify-center">
                   {step.number}
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
+              <h3 className="text-xl font-heading font-bold text-gray-900">{step.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed max-w-xs">{step.description}</p>
             </div>
           ))}

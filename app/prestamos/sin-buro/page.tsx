@@ -52,7 +52,7 @@ export default function SinBuroPage() {
 
       {/* Hero */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-3">
           {filtered.length} opciones sin consulta de buró
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
@@ -141,7 +141,7 @@ export default function SinBuroPage() {
       </section>
 
       {/* Tips */}
-      <section className="mt-12 bg-primary/5 rounded-2xl p-8">
+      <section className="mt-12 bg-accent/5 rounded-2xl p-8">
         <h2 className="text-xl font-extrabold text-gray-900 mb-4">
           Consejos antes de pedir un préstamo sin buró
         </h2>
@@ -155,7 +155,7 @@ export default function SinBuroPage() {
             "Aprovecha el préstamo para <strong>construir historial positivo</strong>: pagando a tiempo mejorarás tu score para futuros créditos.",
           ].map((tip, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+              <span className="w-6 h-6 bg-accent text-primary rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                 {i + 1}
               </span>
               <span dangerouslySetInnerHTML={{ __html: tip }} />

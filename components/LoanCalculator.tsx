@@ -49,7 +49,7 @@ export default function LoanCalculator() {
               onClick={() => setDias(d)}
               className={`flex-1 min-w-[52px] h-[44px] rounded-xl text-sm font-semibold transition-colors ${
                 dias === d
-                  ? "bg-primary text-white"
+                  ? "bg-accent text-primary"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -82,9 +82,9 @@ export default function LoanCalculator() {
       </Link>
 
       <div className="flex justify-center gap-6 mt-4 text-xs text-gray-500 flex-wrap">
-        <span className="flex items-center gap-1"><span className="text-primary font-bold">✓</span> Sin buró</span>
-        <span className="flex items-center gap-1"><span className="text-primary font-bold">✓</span> Solo con INE</span>
-        <span className="flex items-center gap-1"><span className="text-primary font-bold">✓</span> 100% en línea</span>
+        <span className="flex items-center gap-1"><span className="text-success font-bold">✓</span> Sin buró</span>
+        <span className="flex items-center gap-1"><span className="text-success font-bold">✓</span> Solo con INE</span>
+        <span className="flex items-center gap-1"><span className="text-success font-bold">✓</span> 100% en línea</span>
       </div>
 
       <p className="text-center text-xs text-gray-400 mt-3">

@@ -9,12 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#1A7C3E",
+        primary: "#1A1A1A",
         accent: "#F5A623",
-        background: "#F8FAF9",
+        "accent-hover": "#E0941A",
+        background: "#FFFFFF",
+        "background-secondary": "#FAFAFA",
+        success: "#22C55E",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Poppins", "system-ui", "sans-serif"],
       },
     },
   },

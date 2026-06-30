@@ -40,7 +40,7 @@ export default function MonterreyPage() {
 
       {/* Hero */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-3">
+        <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-3 py-1 rounded-full mb-3">
           🏭 Monterrey, Nuevo León
         </span>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
@@ -57,7 +57,7 @@ export default function MonterreyPage() {
       </div>
 
       {/* Sin buró lenders highlight */}
-      <div className="mb-6 p-4 bg-primary/5 rounded-xl border border-primary/20 flex items-center gap-3">
+      <div className="mb-6 p-4 bg-accent/5 rounded-xl border border-accent/20 flex items-center gap-3">
         <span className="text-2xl">✅</span>
         <p className="text-sm text-gray-700">
           Mostramos primero las opciones <strong className="text-primary">sin consulta de buró</strong>,
@@ -124,7 +124,7 @@ export default function MonterreyPage() {
         <p className="text-gray-500 mb-4">Compara todas las opciones sin buró disponibles en México</p>
         <Link
           href="/prestamos"
-          className="inline-flex items-center justify-center h-[52px] px-8 bg-primary text-white font-bold rounded-xl hover:bg-green-700 transition-colors text-base"
+          className="inline-flex items-center justify-center h-[52px] px-8 bg-accent text-primary font-bold rounded-xl hover:bg-accent-hover transition-colors text-base"
         >
           Ver todos los préstamos disponibles →
         </Link>

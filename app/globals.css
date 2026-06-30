@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,9 +9,12 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #F8FAF9;
+    background-color: #FFFFFF;
     color: #1a1a1a;
     font-family: Inter, system-ui, sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: Poppins, system-ui, sans-serif;
   }
 }
 
