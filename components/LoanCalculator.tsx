@@ -17,13 +17,20 @@ export default function LoanCalculator() {
   const interes = total - monto;
 
   return (
-    <div className="bg-white rounded-3xl shadow-lg p-6 md:p-8 w-full max-w-lg mx-auto">
-      <h2 className="text-xl font-bold text-gray-900 mb-6">Calcula tu préstamo</h2>
+    <div
+      className="bg-white rounded-3xl p-5 md:p-7 w-full"
+      style={{ boxShadow: "0 4px 32px rgba(0,0,0,0.08)" }}
+    >
+      <div className="flex items-center justify-between mb-5">
+        <h2 className="text-lg font-heading font-bold text-primary">Calcula tu préstamo</h2>
+        <span className="text-xs bg-accent/15 text-amber-700 font-semibold px-2.5 py-1 rounded-full">Sin compromiso</span>
+      </div>
 
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <label className="text-sm font-medium text-gray-700">¿Cuánto necesitas?</label>
-          <span className="text-lg font-bold text-primary">{formatCurrency(monto)}</span>
+      {/* Monto slider */}
+      <div className="mb-5">
+        <div className="flex justify-between items-center mb-1.5">
+          <label className="text-sm font-medium text-gray-600">¿Cuánto necesitas?</label>
+          <span className="text-xl font-black text-primary">{formatCurrency(monto)}</span>
         </div>
         <input
           type="range"
@@ -32,7 +39,7 @@ export default function LoanCalculator() {
           step={500}
           value={monto}
           onChange={(e) => setMonto(Number(e.target.value))}
-          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+          className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-accent"
         />
         <div className="flex justify-between text-xs text-gray-400 mt-1">
           <span>$500</span>
@@ -40,55 +47,57 @@ export default function LoanCalculator() {
         </div>
       </div>
 
-      <div className="mb-6">
-        <label className="text-sm font-medium text-gray-700 mb-3 block">¿Por cuánto tiempo?</label>
-        <div className="flex gap-2 flex-wrap">
+      {/* Plazo buttons */}
+      <div className="mb-5">
+        <label className="text-sm font-medium text-gray-600 mb-2.5 block">¿Por cuánto tiempo?</label>
+        <div className="flex gap-1.5 flex-wrap">
           {TERM_OPTIONS.map((d) => (
             <button
               key={d}
               onClick={() => setDias(d)}
-              className={`flex-1 min-w-[52px] h-[44px] rounded-xl text-sm font-semibold transition-colors ${
+              className={`flex-1 min-w-[48px] h-[40px] rounded-lg text-xs font-bold transition-colors ${
                 dias === d
-                  ? "bg-accent text-primary"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-accent text-primary shadow-sm"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
-              {d} días
+              {d}d
             </button>
           ))}
         </div>
       </div>
 
-      <div className="bg-background rounded-2xl p-4 mb-6 space-y-2">
-        <div className="flex justify-between text-sm text-gray-600">
+      {/* Summary */}
+      <div className="bg-[#FAFAFA] rounded-xl p-4 mb-5 space-y-2">
+        <div className="flex justify-between text-sm text-gray-500">
           <span>Monto solicitado</span>
-          <span className="font-medium">{formatCurrency(monto)}</span>
+          <span className="font-semibold text-gray-800">{formatCurrency(monto)}</span>
         </div>
-        <div className="flex justify-between text-sm text-gray-600">
+        <div className="flex justify-between text-sm text-gray-500">
           <span>Interés estimado</span>
-          <span className="font-medium">{formatCurrency(interes)}</span>
+          <span className="font-semibold text-gray-800">{formatCurrency(interes)}</span>
         </div>
-        <div className="flex justify-between text-base font-bold text-gray-900 border-t border-gray-200 pt-2 mt-2">
+        <div className="flex justify-between text-sm font-bold text-gray-900 border-t border-gray-200 pt-2">
           <span>Total a devolver</span>
-          <span className="text-primary text-xl">{formatCurrency(total)}</span>
+          <span className="text-lg font-black text-primary">{formatCurrency(total)}</span>
         </div>
       </div>
 
       <Link
         href="/prestamos"
-        className="flex items-center justify-center w-full h-[52px] bg-accent text-white font-bold text-base rounded-xl hover:bg-amber-500 transition-colors"
+        className="flex items-center justify-center w-full h-[52px] bg-accent text-primary font-bold text-base rounded-xl hover:bg-accent-hover transition-colors"
       >
         Ver préstamos disponibles →
       </Link>
 
-      <div className="flex justify-center gap-6 mt-4 text-xs text-gray-500 flex-wrap">
-        <span className="flex items-center gap-1"><span className="text-success font-bold">✓</span> Sin buró</span>
-        <span className="flex items-center gap-1"><span className="text-success font-bold">✓</span> Solo con INE</span>
-        <span className="flex items-center gap-1"><span className="text-success font-bold">✓</span> 100% en línea</span>
+      <div className="flex justify-center gap-4 mt-3 text-xs text-gray-400 flex-wrap">
+        <span className="flex items-center gap-1"><span className="text-success">✓</span> Sin buró</span>
+        <span className="flex items-center gap-1"><span className="text-success">✓</span> Solo con INE</span>
+        <span className="flex items-center gap-1"><span className="text-success">✓</span> 100% en línea</span>
       </div>
 
-      <p className="text-center text-xs text-gray-400 mt-3">
-        * Cálculo orientativo. La tasa real depende del prestamista elegido.
+      <p className="text-center text-xs text-gray-300 mt-2">
+        * Cálculo orientativo. La tasa real depende del prestamista.
       </p>
     </div>
   );
