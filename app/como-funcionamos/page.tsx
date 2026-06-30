@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -158,25 +159,42 @@ export default function ComoFuncionamosPage() {
               <p className="text-gray-500 text-sm">Los resultados no se venden</p>
             </div>
           </div>
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 space-y-3 text-gray-700 leading-relaxed">
-            <p>
-              El equipo editorial de Dinoro.mx opera de forma independiente al equipo comercial.
-              Los prestamistas no pueden influir en el contenido de nuestras reseñas ni en el
-              ordenamiento de los resultados del catálogo.
-            </p>
-            <ul className="space-y-2 text-sm">
-              {[
-                "Ningún prestamista paga por aparecer primero en el catálogo.",
-                "Las calificaciones (estrellas) reflejan datos de usuarios reales y verificación propia.",
-                "Si detectamos prácticas abusivas o quejas masivas, retiramos al prestamista del catálogo.",
-                "Actualizamos los datos de TAE, montos y plazos periódicamente para mantener la precisión.",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="text-success font-bold mt-0.5">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              {/* Texto */}
+              <div className="flex-1 space-y-3 text-gray-700 leading-relaxed">
+                <p>
+                  El equipo editorial de Dinoro.mx opera de forma independiente al equipo comercial.
+                  Los prestamistas no pueden influir en el contenido de nuestras reseñas ni en el
+                  ordenamiento de los resultados del catálogo.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  {[
+                    "Ningún prestamista paga por aparecer primero en el catálogo.",
+                    "Las calificaciones (estrellas) reflejan datos de usuarios reales y verificación propia.",
+                    "Si detectamos prácticas abusivas o quejas masivas, retiramos al prestamista del catálogo.",
+                    "Actualizamos los datos de TAE, montos y plazos periódicamente para mantener la precisión.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-success font-bold mt-0.5">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Ilustración */}
+              <div className="flex-shrink-0 flex justify-center w-full md:w-auto">
+                <Image
+                  src="/images/trust-illustration.png"
+                  alt="Plataforma independiente y transparente para comparar préstamos en México"
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                  className="object-contain w-full max-w-[340px] md:w-[300px] lg:w-[360px]"
+                />
+              </div>
+            </div>
           </div>
         </section>
 

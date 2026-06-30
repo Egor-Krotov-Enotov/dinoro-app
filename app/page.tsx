@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import LoanCalculator from "@/components/LoanCalculator";
 import LenderGrid from "@/components/LenderGrid";
 import HowItWorks from "@/components/HowItWorks";
@@ -50,26 +51,13 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={websiteSchema} />
-      {/* Hero — fondo blanco con blob decorativo */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-white pt-10 pb-6 md:pt-16 md:pb-10">
-        {/* Blob decorativo fondo */}
-        <svg
-          className="absolute -top-20 -right-20 w-[420px] h-[420px] opacity-40 pointer-events-none"
-          viewBox="0 0 420 420"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M210 20C280 20 380 80 390 160C400 240 340 350 260 390C180 430 60 390 30 300C0 210 40 90 110 50C150 28 175 20 210 20Z"
-            fill="#FFF4E0"
-          />
-        </svg>
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-            {/* Left col */}
-            <div className="lg:pt-4">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-center">
+
+            {/* Left col — texto */}
+            <div className="lg:pt-2">
               <span className="inline-block bg-accent/15 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wide uppercase">
                 🇲🇽 Comparador #1 en México
               </span>
@@ -80,7 +68,19 @@ export default function HomePage() {
                 Compara más de 10 prestamistas. Sin buró, solo con INE y aprobación en minutos.
               </p>
 
-              {/* Stats row — mobile only shows as inline badges */}
+              {/* Illustration — mobile: between text and stats */}
+              <div className="flex justify-center mb-5 lg:hidden">
+                <Image
+                  src="/images/hero-illustration.png"
+                  alt="Ilustración de comparación de préstamos en México"
+                  width={280}
+                  height={280}
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
+              {/* Stats row — mobile */}
               <div className="flex flex-wrap gap-2 mb-6 lg:hidden">
                 {stats.map((s) => (
                   <span key={s.label} className="flex items-center gap-1.5 bg-gray-50 border border-gray-100 rounded-full px-3 py-1.5 text-sm font-semibold text-gray-800">
@@ -103,12 +103,23 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Center col — Illustration desktop only */}
+            <div className="hidden lg:flex items-center justify-center">
+              <Image
+                src="/images/hero-illustration.png"
+                alt="Ilustración de comparación de préstamos en México"
+                width={380}
+                height={380}
+                priority
+                className="object-contain"
+              />
+            </div>
+
             {/* Right col — Calculator */}
             <div className="w-full">
               <LoanCalculator />
             </div>
           </div>
-
         </div>
       </section>
 

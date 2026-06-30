@@ -1,19 +1,21 @@
+import Image from "next/image";
+
 const steps = [
   {
     number: "01",
-    icon: "🧮",
+    image: "/images/step1-calcula.png",
     title: "Calcula",
     description: "Usa nuestro simulador para saber cuánto puedes pedir y cuánto pagarás. Sin sorpresas.",
   },
   {
     number: "02",
-    icon: "🔍",
+    image: "/images/step2-compara.png",
     title: "Compara",
     description: "Revisa las opciones disponibles según tu monto, plazo y si necesitas préstamo sin buró.",
   },
   {
     number: "03",
-    icon: "✅",
+    image: "/images/step3-solicita.png",
     title: "Solicita",
     description: "Haz clic en tu opción favorita y completa el proceso 100% en línea. ¡Solo con tu INE!",
   },
@@ -61,9 +63,16 @@ export default function HowItWorks() {
                 {step.number}
               </span>
 
-              {/* Icono */}
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-2xl">
-                {step.icon}
+              {/* Ilustración */}
+              <div className="flex justify-center pt-2">
+                <Image
+                  src={step.image}
+                  alt={`Paso ${step.number}: ${step.title}`}
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                  className="object-contain w-[120px] h-[120px] md:w-[160px] md:h-[160px]"
+                />
               </div>
 
               <h3 className="text-lg font-heading font-bold text-primary">{step.title}</h3>
