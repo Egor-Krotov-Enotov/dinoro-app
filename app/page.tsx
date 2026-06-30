@@ -85,7 +85,7 @@ export default function HomePage() {
                 {stats.map((s) => (
                   <span key={s.label} className="flex items-center gap-1.5 bg-gray-50 border border-gray-100 rounded-full px-3 py-1.5 text-sm font-semibold text-gray-800">
                     <span>{s.icon}</span>
-                    <span className="text-accent font-black">{s.value}</span>
+                    <span className="text-accent-text font-black">{s.value}</span>
                     <span className="font-normal text-gray-500">{s.label}</span>
                   </span>
                 ))}

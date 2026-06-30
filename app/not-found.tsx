@@ -13,7 +13,7 @@ export default function NotFound() {
       </div>
       <div className="mb-2 flex items-center gap-1.5">
         <span className="text-2xl font-heading font-black text-primary">dinoro</span>
-        <span className="text-2xl font-heading font-black text-accent">.mx</span>
+        <span className="text-2xl font-heading font-black text-accent-text">.mx</span>
       </div>
       <h1 className="text-xl font-bold text-gray-800 mb-2 mt-4">Esta página no existe</h1>
       <p className="text-gray-500 text-sm max-w-xs mb-8">

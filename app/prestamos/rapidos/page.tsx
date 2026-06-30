@@ -43,7 +43,7 @@ export default function RapidosPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Breadcrumbs */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
+      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-primary">Inicio</Link>
         <span>›</span>
         <Link href="/prestamos" className="hover:text-primary">Préstamos</Link>
@@ -92,7 +92,7 @@ export default function RapidosPage() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mt-2">* Tiempos estimados en días hábiles. Pueden variar según el banco receptor.</p>
+        <p className="text-xs text-gray-500 mt-2">* Tiempos estimados en días hábiles. Pueden variar según el banco receptor.</p>
       </section>
 
       {/* Requirements */}

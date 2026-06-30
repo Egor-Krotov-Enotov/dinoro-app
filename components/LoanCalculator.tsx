@@ -77,7 +77,7 @@ export default function LoanCalculator() {
           onChange={(e) => { const v = Number(e.target.value); setMonto(v); handleChange(v, dias); }}
           className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-accent"
         />
-        <div className="flex justify-between text-xs text-gray-400 mt-1">
+        <div className="flex justify-between text-xs text-gray-500 mt-1">
           <span>$500</span>
           <span>$20,000</span>
         </div>
@@ -113,7 +113,7 @@ export default function LoanCalculator() {
           <span>Interés estimado</span>
           <span className="font-semibold text-gray-800">
             {formatCurrency(interesMin)}
-            <span className="text-gray-400"> – </span>
+            <span className="text-gray-500"> – </span>
             {formatCurrency(interesMax)}
           </span>
         </div>
@@ -131,19 +131,19 @@ export default function LoanCalculator() {
         Ver préstamos disponibles →
       </Link>
 
-      <div className="flex justify-center gap-4 mt-3 text-xs text-gray-400 flex-wrap">
+      <div className="flex justify-center gap-4 mt-3 text-xs text-gray-500 flex-wrap">
         <span className="flex items-center gap-1">
-          <span className="text-success">✓</span> Sin buró
+          <span className="text-green-700">✓</span> Sin buró
         </span>
         <span className="flex items-center gap-1">
-          <span className="text-success">✓</span> Solo con INE
+          <span className="text-green-700">✓</span> Solo con INE
         </span>
         <span className="flex items-center gap-1">
-          <span className="text-success">✓</span> 100% en línea
+          <span className="text-green-700">✓</span> 100% en línea
         </span>
       </div>
 
-      <p className="text-center text-xs text-gray-300 mt-2">
+      <p className="text-center text-xs text-gray-500 mt-2">
         * Cálculo orientativo. La tasa real depende del prestamista elegido.
       </p>
     </div>

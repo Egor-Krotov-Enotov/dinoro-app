@@ -107,7 +107,7 @@ export default function CatalogClient({ monto, dias }: Props) {
 
       {/* Filter chips */}
       <div className="mb-6">
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2 px-1">Ordenar por:</p>
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 px-1">Ordenar por:</p>
         <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
         {CHIPS.map((chip) => (
           <button
@@ -126,7 +126,7 @@ export default function CatalogClient({ monto, dias }: Props) {
       </div>
 
       {/* Count */}
-      <p className="text-xs text-gray-400 mb-4">
+      <p className="text-xs text-gray-500 mb-4">
         {sorted.length} opciones disponibles
       </p>
 
@@ -147,11 +147,11 @@ export default function CatalogClient({ monto, dias }: Props) {
       </div>
 
       {sorted.length === 0 && (
-        <div className="text-center py-16 text-gray-400">
+        <div className="text-center py-16 text-gray-500">
           <p className="text-lg font-semibold text-gray-600 mb-2">Sin opciones con ese filtro</p>
           <button
             onClick={() => setFilter("todos")}
-            className="text-sm font-bold text-accent hover:underline"
+            className="text-sm font-bold text-accent-text hover:underline"
           >
             Ver todas las opciones
           </button>

@@ -90,7 +90,7 @@ export default function LenderPage({ params }: Props) {
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={financialProductSchema} />
       {/* Breadcrumbs */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6 flex-wrap">
+      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6 flex-wrap">
         <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>
         <span>›</span>
         <Link href="/prestamos" className="hover:text-primary transition-colors">Préstamos</Link>
@@ -209,7 +209,7 @@ export default function LenderPage({ params }: Props) {
       </section>
 
       {/* Legal disclaimer */}
-      <p className="text-xs text-gray-400 mb-8 leading-relaxed">
+      <p className="text-xs text-gray-500 mb-8 leading-relaxed">
         * La TAE indicada es referencial y puede variar según tu perfil. Consulta siempre el contrato
         oficial de {lender.name} antes de firmar. Dinoro.mx es un comparador independiente y no otorga
         préstamos directamente.

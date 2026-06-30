@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-6 text-xs text-gray-500 space-y-2">
+        <div className="border-t border-gray-700 pt-6 text-xs text-gray-400 space-y-2">
           <p>
             Dinoro.mx es un sitio comparador de servicios financieros. No somos una institución financiera ni otorgamos préstamos directamente.
             La información sobre las tasas (TAE) es referencial y puede variar. Consulta siempre las condiciones actualizadas en el sitio del prestamista.

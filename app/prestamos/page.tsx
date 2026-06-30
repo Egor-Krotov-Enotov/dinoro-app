@@ -40,7 +40,7 @@ export default function PrestamosPage({ searchParams }: Props) {
       </div>
 
       {/* Category nav */}
-      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2 px-1">Tipo de préstamo:</p>
+      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 px-1">Tipo de préstamo:</p>
       <div className="flex gap-2 overflow-x-auto pb-1 mb-6 -mx-1 px-1" style={{ scrollbarWidth: "none" }}>
         {categories.map((c) => (
           <Link

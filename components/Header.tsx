@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-0.5">
             <span className="text-2xl font-heading font-black text-primary tracking-tight">dinoro</span>
-            <span className="text-2xl font-heading font-black text-accent tracking-tight">.mx</span>
+            <span className="text-2xl font-heading font-black text-accent-text tracking-tight">.mx</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">

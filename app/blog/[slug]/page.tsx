@@ -103,7 +103,7 @@ export default function BlogPostPage({ params }: Props) {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Breadcrumbs */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Inicio</Link>
         <span>›</span>
         <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
@@ -129,7 +129,7 @@ export default function BlogPostPage({ params }: Props) {
           {post.title}
         </h1>
         <p className="text-lg text-gray-500 mb-4">{post.description}</p>
-        <div className="flex items-center gap-3 text-sm text-gray-400">
+        <div className="flex items-center gap-3 text-sm text-gray-500">
           <span>{post.author}</span>
           <span>·</span>
           <span>{formatDate(post.date)}</span>
@@ -164,7 +164,7 @@ export default function BlogPostPage({ params }: Props) {
 
       {/* Back */}
       <div className="mt-8 text-center">
-        <Link href="/blog" className="text-sm text-gray-400 hover:text-primary transition-colors">
+        <Link href="/blog" className="text-sm text-gray-500 hover:text-primary transition-colors">
           ← Volver al blog
         </Link>
       </div>

@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 const GA_ID = "G-XXXXXXXXXX"; // reemplazar con ID real antes de lanzar
 
@@ -66,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${poppins.variable}`}>
       <body className="antialiased min-h-screen flex flex-col">
         <JsonLd data={organizationSchema} />
         <Script

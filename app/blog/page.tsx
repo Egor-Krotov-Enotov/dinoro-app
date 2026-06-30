@@ -60,7 +60,7 @@ export default function BlogPage() {
               </p>
 
               <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">
-                <div className="text-xs text-gray-400 space-x-2">
+                <div className="text-xs text-gray-500 space-x-2">
                   <span>{formatDate(post.date)}</span>
                   <span>·</span>
                   <span>{post.readTime} de lectura</span>
